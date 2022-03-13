@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Config;
 using GUI;
 using Main;
+using Player;
 using SampleGameObject;
 using UnityEngine;
 using Zenject;
@@ -46,6 +47,8 @@ public class SimpleInstaller : MonoInstaller
     {
         Container.BindInterfacesTo<HardcodeConfigManager>().AsSingle();
         Container.BindInterfacesAndSelfTo<SimpleGameController>().AsSingle();
+        Container.BindInterfacesAndSelfTo<SimplePlayerController>().AsSingle();
+        Container.BindInstance(new PlayerInputActions()).AsSingle();
         Container.Bind<IGameObjectController>().To<SampleGameObjectController>().AsTransient();
     }
 }
