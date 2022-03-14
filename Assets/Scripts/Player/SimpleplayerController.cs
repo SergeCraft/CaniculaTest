@@ -7,12 +7,14 @@ namespace Player
     public class SimplePlayerController : IPlayerController, IDisposable
     {
         private PlayerInputActions _actions;
+        private Camera _cam;
         
 
         public SimplePlayerController(PlayerInputActions actions)
         {
             _actions = actions;
             _actions.Player.Enable();
+            _cam = GameObject.Find("Main Camera").GetComponent<Camera>();
 
             SubscribeToSignals();
         }
@@ -37,7 +39,23 @@ namespace Player
         
         public void OnClick(InputAction.CallbackContext callback)
         {
-            Debug.Log($"Click on {Mouse.current.position.ReadValue()}");
+            Vector3 mousePosition = _cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            mousePosition.z = -10;
+            Vector3 negativeMousePosition = new Vector3(
+                mousePosition.x,
+                mousePosition.y,
+                Mathf.Infinity);
+            
+            Debug.Log($"Click on {mousePosition}");
+
+            RaycastHit2D hit = Physics2D.Raycast(
+                mousePosition, Vector3.forward);
+            Debug.DrawRay(mousePosition, Vector3.forward, Color.green, 10000);
+
+            if (hit)
+            {
+                Debug.Log($"Hit on {hit.collider.gameObject.name}");
+            }
         }
     }
 }
