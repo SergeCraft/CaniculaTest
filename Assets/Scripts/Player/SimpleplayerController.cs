@@ -1,6 +1,8 @@
 using System;
+using Main;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 namespace Player
 {
@@ -8,13 +10,14 @@ namespace Player
     {
         private PlayerInputActions _actions;
         private Camera _cam;
-        
+        private SignalBus _signalBus;
 
-        public SimplePlayerController(PlayerInputActions actions)
+        public SimplePlayerController(PlayerInputActions actions, SignalBus signalBus)
         {
             _actions = actions;
             _actions.Player.Enable();
             _cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+            _signalBus = signalBus;
 
             SubscribeToSignals();
         }
@@ -41,20 +44,18 @@ namespace Player
         {
             Vector3 mousePosition = _cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             mousePosition.z = -10;
-            Vector3 negativeMousePosition = new Vector3(
-                mousePosition.x,
-                mousePosition.y,
-                Mathf.Infinity);
-            
+
             Debug.Log($"Click on {mousePosition}");
 
             RaycastHit2D hit = Physics2D.Raycast(
                 mousePosition, Vector3.forward);
-            Debug.DrawRay(mousePosition, Vector3.forward, Color.green, 10000);
 
             if (hit)
             {
                 Debug.Log($"Hit on {hit.collider.gameObject.name}");
+                _signalBus.Fire(new CreatePlaceableRequestSignal(
+                    mousePosition,
+                    hit.collider.gameObject));
             }
         }
     }

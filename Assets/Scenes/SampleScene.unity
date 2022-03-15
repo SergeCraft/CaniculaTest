@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 378451120}
   - component: {fileID: 378451119}
-  - component: {fileID: 378451118}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -141,18 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &378451118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378451117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97b6acf59a73d1c4796ae271da25f1dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &378451119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +275,7 @@ GameObject:
   - component: {fileID: 788071893}
   m_Layer: 0
   m_Name: Beach
-  m_TagString: Untagged
+  m_TagString: Beach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,7 +427,7 @@ GameObject:
   - component: {fileID: 1415429269}
   m_Layer: 0
   m_Name: Sea
-  m_TagString: Untagged
+  m_TagString: Sea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,7 +541,7 @@ GameObject:
   - component: {fileID: 1679777768}
   m_Layer: 0
   m_Name: Sky
-  m_TagString: Untagged
+  m_TagString: Sky
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

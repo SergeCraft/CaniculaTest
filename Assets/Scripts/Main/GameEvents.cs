@@ -1,14 +1,16 @@
-using SampleGameObject;
+using UnityEngine;
 
 namespace Main
 {
-    public class SampleObjectChangedSignal
+    public class CreatePlaceableRequestSignal
     {
-        public IGameObjectController GameObjectController { get; private set; }
+        public Vector2 InitialPosition { get; private set; }
+        public GameObject ParentRegion { get; private set; }
 
-        public SampleObjectChangedSignal(IGameObjectController gameObjectController)
+        public CreatePlaceableRequestSignal(Vector2 initposition, GameObject parent)
         {
-            GameObjectController = gameObjectController;
+            InitialPosition = initposition;
+            ParentRegion = parent;
         }
     }
 }
