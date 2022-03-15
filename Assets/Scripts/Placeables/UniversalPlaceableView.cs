@@ -3,6 +3,7 @@ using System.Collections;
 using Config;
 using UnityEngine;
 using Zenject;
+using Random = UnityEngine.Random;
 
 namespace Placeables
 {
@@ -37,7 +38,9 @@ namespace Placeables
                      spriteToAdd = Resources.Load<Sprite>("3rdParty/Canicula/Textures/ball");
                      break;
                  case PlaceableTypes.Cloud:
-                     spriteToAdd = Resources.Load<Sprite>("3rdParty/Canicula/Textures/cloud_01");
+                     string[] resourceNames = new[] {"cloud_01", "cloud_02", "cloud_03"};
+                     string resourceName = resourceNames[Random.Range(0, resourceNames.Length)];
+                     spriteToAdd = Resources.Load<Sprite>($"3rdParty/Canicula/Textures/{resourceName}");
                      break;
                  case PlaceableTypes.Palm:
                      spriteToAdd = Resources.Load<Sprite>("3rdParty/Canicula/Textures/palm");
