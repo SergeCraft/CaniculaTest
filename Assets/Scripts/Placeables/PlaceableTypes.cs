@@ -7,6 +7,7 @@ namespace Placeables
         Palm,
         Ball,
         SeaStar,
-        Plane
+        Plane,
+        Sailboat
     }
 }

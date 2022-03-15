@@ -54,6 +54,9 @@ namespace Placeables
                  case PlaceableTypes.Plane:
                      spriteToAdd = Resources.Load<Sprite>("Materials/Sprites/Plane");
                      break;
+                 case PlaceableTypes.Sailboat:
+                     spriteToAdd = Resources.Load<Sprite>("Materials/Sprites/Sailboat");
+                     break;
              }
 
              if (direction.x == 1) spriteRenderer.flipX = true;

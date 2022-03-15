@@ -42,9 +42,11 @@ namespace Config
                 {PlaceableTypes.Sun, new GameConfig.PlaceableConfig(
                     0.0f, 1.0f, 1, 14, Vector2.zero, new Vector2(0.6f, 0.6f) * 100)},
                 {PlaceableTypes.SeaStar, new GameConfig.PlaceableConfig(
-                    3.0f, 7.0f, 2, 3, Vector2.zero, Vector2.one * 0.001f)},
+                    3.0f, 7.0f, 2, 3, Vector2.zero, Vector2.one * 100)},
                 {PlaceableTypes.Plane, new GameConfig.PlaceableConfig(
-                    20.0f, 100.0f, 2, 3, Vector2.zero, Vector2.one * 100)}
+                    20.0f, 100.0f, 2, 3, Vector2.zero, Vector2.one * 100)},
+                {PlaceableTypes.Sailboat, new GameConfig.PlaceableConfig(
+                    20.0f, 100.0f, 1, 3, new Vector2(0.0f, -120.0f), Vector2.one * 100)}
             };
             
             _config.PlaceableRegionBindings = new Dictionary<PlaceableRegions, List<PlaceableTypes>>()
@@ -55,7 +57,10 @@ namespace Config
                     PlaceableTypes.Palm,
                     PlaceableTypes.SeaStar
                 }},
-                {PlaceableRegions.Sea, new List<PlaceableTypes>()},
+                {PlaceableRegions.Sea, new List<PlaceableTypes>()
+                {
+                    PlaceableTypes.Sailboat
+                }},
                 {PlaceableRegions.Sky, new List<PlaceableTypes>()
                 {
                     PlaceableTypes.Cloud,
