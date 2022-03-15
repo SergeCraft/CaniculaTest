@@ -42,7 +42,7 @@ namespace Config
                 {PlaceableTypes.Sun, new GameConfig.PlaceableConfig(
                     0.0f, 1.0f, 1, 14, Vector2.zero, new Vector2(0.6f, 0.6f) * 100)},
                 {PlaceableTypes.SeaStar, new GameConfig.PlaceableConfig(
-                    0.0f, 0.0f, 2, 3, Vector2.zero, Vector2.one * 100)}
+                    3.0f, 7.0f, 2, 3, Vector2.zero, Vector2.one * 100)}
             };
             
             _config.PlaceableRegionBindings = new Dictionary<PlaceableRegions, List<PlaceableTypes>>()
