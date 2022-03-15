@@ -6,6 +6,7 @@ namespace Placeables
         Cloud,
         Palm,
         Ball,
-        SeaStar
+        SeaStar,
+        Plane
     }
 }

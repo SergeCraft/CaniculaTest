@@ -51,7 +51,12 @@ namespace Placeables
                  case PlaceableTypes.SeaStar:
                      spriteToAdd = Resources.Load<Sprite>("3rdParty/Canicula/Textures/star");
                      break;
+                 case PlaceableTypes.Plane:
+                     spriteToAdd = Resources.Load<Sprite>("Materials/Sprites/Plane");
+                     break;
              }
+
+             if (direction.x == 1) spriteRenderer.flipX = true;
 
              spriteRenderer.sprite = spriteToAdd;
              transform.localScale = args.Config.Scale;
